@@ -11,7 +11,7 @@ from duckduckgo_search import DDGS
 # If your files (chat.html, styles.css, app.js) are in the same folder as app.py,
 # tell Flask to use current folder for templates/static.
 app = Flask(__name__, static_folder='.', template_folder='.')
-CORS(app, resources={r"/*": {"origins": "*"}})
+CORS(app)
 
 # ---------------- Helpers ----------------
 def basic_reply(msg):
