@@ -11,7 +11,7 @@ from duckduckgo_search import DDGS
 # If your files (chat.html, styles.css, app.js) are in the same folder as app.py,
 # tell Flask to use current folder for templates/static.
 app = Flask(__name__, static_folder='.', template_folder='.')
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 # ---------------- Helpers ----------------
 def basic_reply(msg):
@@ -20,7 +20,7 @@ def basic_reply(msg):
         return "I'm A.S.I.A 🤖 — your intelligent assistant developed by Pixel Studio. I can answer almost anything!"
     if "how are you" in msg:
         return "I'm doing great 😄 and ready to help you. What do you want to know?"
-    if msg in ["hi", "hey", "hello", "hola"]:
+    if msg in ["hi","hii", "hiii", "hey", "hello", "hola"]:
         return random.choice(["Hey 👋", "Hi there!", "Hello!", "Hey, how can I help?"])
     return None
 
