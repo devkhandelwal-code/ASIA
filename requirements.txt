@@ -1,4 +1,6 @@
 flask
 flask-cors
 gunicorn
+wikipedia
 duckduckgo-search
+requests
