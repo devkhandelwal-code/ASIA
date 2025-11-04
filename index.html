@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>A.S.I.A — Chat</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">A.S.I.A.</div>
+      <div class="tag">Your Smart AI Assistant</div>
+    </div>
+
+    <div class="top-actions">
+      <button id="tryBtn" class="btn outline">Try it (anon)</button>
+      <button id="historyToggle" class="btn">History</button>
+      <button id="settingsBtn" class="btn">Settings</button>
+      <button id="authBtn" class="btn primary">Login / Register</button>
+    </div>
+  </header>
+
+  <main class="main">
+    <aside class="left-panel" id="leftPanel">
+      <div class="user-card" id="userCard">
+        <div id="userGreeting">Not signed in</div>
+      </div>
+
+      <div class="history-list" id="historyList">
+        <div class="section-title">Conversation History</div>
+        <div id="historyItems" class="history-items">Sign in to see saved chats</div>
+      </div>
+    </aside>
+
+    <section class="chat-panel">
+      <div id="chatBox" class="chat-box"></div>
+
+      <div class="input-area">
+        <input id="userInput" placeholder="Ask something..." autocomplete="off" />
+        <button id="sendBtn" class="btn primary">Send</button>
+      </div>
+    </section>
+
+    <aside class="right-panel" id="rightPanel">
+      <div class="section-title">Account</div>
+      <div id="accountArea">
+        <div class="auth-actions">
+          <button id="openLogin" class="btn">Login</button>
+          <button id="openRegister" class="btn">Register</button>
+          <button id="logoutBtn" class="btn danger" style="display:none">Logout</button>
+        </div>
+      </div>
+
+      <div class="section-title">Settings</div>
+      <div class="settings">
+        <label class="switch">
+          <input id="themeToggle" type="checkbox" />
+          <span class="slider"></span>
+        </label>
+        <span>Dark theme</span>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Modal: Auth -->
+  <div id="authModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" id="closeAuth">✕</button>
+      <div id="authTabs">
+        <button id="tabLogin" class="tab active">Login</button>
+        <button id="tabRegister" class="tab">Register</button>
+      </div>
+
+      <!-- Login -->
+      <form id="loginForm" class="auth-form">
+        <input id="loginEmail" type="email" placeholder="Email" required />
+        <input id="loginPassword" type="password" placeholder="Password" required />
+        <button id="loginSubmit" class="btn primary">Login</button>
+      </form>
+
+      <!-- Register -->
+      <form id="registerForm" class="auth-form hidden">
+        <input id="regName" type="text" placeholder="Full name" required />
+        <input id="regEmail" type="email" placeholder="Email" required />
+        <input id="regPassword" type="password" placeholder="Password" required />
+        <button id="regSubmit" class="btn primary">Create account</button>
+      </form>
+
+      <div id="authMsg" class="auth-msg"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
