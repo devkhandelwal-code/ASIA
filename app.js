@@ -4,7 +4,7 @@
    - fetch history from /history and filter by user_id
 */
 
-const API_BASE = "https://asia-ai.onrender.com"; // change if backend at other host
+const API_BASE = ""; // change if backend at other host
 
 // --- Helpers: crypto hash for passwords (SHA-256) ---
 async function sha256(str) {
